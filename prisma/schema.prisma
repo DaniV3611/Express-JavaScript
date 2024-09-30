@@ -1,0 +1,17 @@
+// Generador de cliente Prisma
+generator client {
+  provider = "prisma-client-js" // Utiliza el cliente de JavaScript para Prisma
+}
+
+// Fuente de datos para la base de datos
+datasource db {
+  provider = "sqlite" // Especifica que se está utilizando SQLite como proveedor de base de datos
+  url      = env("DATABASE_URL") // La URL de la base de datos se obtiene de una variable de entorno
+}
+
+// Modelo de empleados
+model Employees {
+  id Int @id @default(autoincrement()) // ID único para cada empleado, se auto-incrementa
+  name String // Nombre del empleado
+  salary Int // Salario del empleado
+}
